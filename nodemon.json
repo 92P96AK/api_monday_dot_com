@@ -1,0 +1,11 @@
+{
+  "watch": ["src"],
+  "ext": "*",
+  "ignore": ["node_modules", "dist"],
+  "restartable": "rs",
+  "delay": "2500",
+  "events": {
+    "start": "echo 'Server started'",
+    "crash": "echo 'server crashed'"
+  }
+}

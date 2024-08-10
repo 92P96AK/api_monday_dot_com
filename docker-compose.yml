@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+  api:
+    restart: "always"
+    env_file: ".env"
+    build:
+      context: "."
+      dockerfile: "Dockerfile.dev"
+    depends_on:
+      - mongodb
+    ports:
+      - "9000:9000"
+    volumes:
+      - "./src:/app/src"
+
+  mongodb:
+    image: "mongo:6.0"
+    container_name: mongodb
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${DATABASE_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${DATABASE_PASSWORD}
+volumes:
+  mongo-data:
+    driver: local
