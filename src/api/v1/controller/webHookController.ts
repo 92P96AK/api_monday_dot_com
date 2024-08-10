@@ -3,6 +3,9 @@ import { WebHookService } from "../service";
 import { IQueryConstructorPayload } from "../../../interfaces";
 import { GraphQlQueryConstructor } from "../../../utils";
 import { API, Log } from "../../../helper";
+import { GRAPHQL_QUERIES } from "../../../constants";
+import axios from "axios";
+import { config } from "../../../infrastructure";
 
 export class WebHookController {
   private webHookService: WebHookService;
@@ -24,26 +27,26 @@ export class WebHookController {
       if (event) {
         const { value, columnId, boardId, pulseId } = event;
         if (columnId === "numbers") {
-          const payload: IQueryConstructorPayload = {
-            queryType: "CHANGE_COLS_VALUE",
-            payload: {
-              ITEM_ID: pulseId,
-              BOARD_ID: boardId,
-              COL_ID: "numbers_1",
-              COL_VALUE: value.value * 5,
-            },
-          };
-          const query = GraphQlQueryConstructor(payload);
-          console.log({query})
-          return await API.post('', {query });
-
+          const variables = {
+            queryType:'CHANGE_COLS_VALUE',
+            payload:{
+            ITEM_ID: parseInt(pulseId),
+            BOARD_ID:parseInt(boardId),
+            COL_ID: "numbers_1",
+            COL_VALUE: value.value * 5,}
+          } as IQueryConstructorPayload
+          const query=GraphQlQueryConstructor(variables)
+           await API.post("", {
+            query
+          });
+           
         }
         res.apiSuccess({
           message: "Success",
         });
       }
     } catch (error) {
-      Log.error({message:"error",error})
+      Log.error({ message: "error", error });
       res.apiFail({
         message: "Failed",
         error,

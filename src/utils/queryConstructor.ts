@@ -14,6 +14,5 @@ export const GraphQlQueryConstructor = (
       rawQuery = rawQuery.replace(`{{${key}}}`, payload[key] as any);
     }
   }
-  console.log({rawQuery})
   return rawQuery;
 };

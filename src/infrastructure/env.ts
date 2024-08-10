@@ -20,7 +20,7 @@ export const config: IServerEnv = {
   databasePort: parseInt(LoadFromEnv("DATABASE_PORT") || "27017"),
   monday: {
     apiEndPoint: LoadFromEnv("MONDAY_API_END_POINT"),
-    token: LoadFromEnv("MONDAY_API_END_POINT"),
+    token: LoadFromEnv("MONDAY_TOKEN"),
   },
   slack: {
     token: LoadFromEnv("SLACK_TOKEN") || "",

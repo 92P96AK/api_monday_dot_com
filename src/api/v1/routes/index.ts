@@ -4,7 +4,6 @@ export class Routes {
   public router: Router;
   public webHookRoutes: WebHookRoutes;
   constructor() {
-    console.log('i am being called')
     this.router = Router({ mergeParams: true });
     this.webHookRoutes = new WebHookRoutes();
     this.setRoutes();
