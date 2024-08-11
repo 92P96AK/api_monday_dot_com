@@ -21,9 +21,5 @@ export const config: IServerEnv = {
   monday: {
     apiEndPoint: LoadFromEnv("MONDAY_API_END_POINT"),
     token: LoadFromEnv("MONDAY_TOKEN"),
-  },
-  slack: {
-    token: LoadFromEnv("SLACK_TOKEN") || "",
-    channelId: LoadFromEnv("SLACK_CHANNEL_ID") || "",
-  },
+  }
 };

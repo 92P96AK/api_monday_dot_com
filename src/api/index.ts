@@ -10,12 +10,12 @@ import { ApiMethods, RequestQueryTransformer } from "./middlewares";
 import { config } from "@infrastructure";
 import { IServerEnv } from "@interfaces";
 import { corsOptions, RESOURCE_NOT_FOUND, ROUTE_NOT_FOUND } from "@constants";
-import { Routes as V1_ROutes } from "./v1/routes";
+import { Routes as V1_Routes } from "./v1/routes";
 import { Log } from "@helper";
 
 export class Server {
   private app: Application;
-  private v1_routes: V1_ROutes;
+  private v1_routes: V1_Routes;
   private env: Partial<IServerEnv>;
   private swaggerFile: string = path.resolve(
     __dirname + "/../swagger/swagger.json"
@@ -29,7 +29,7 @@ export class Server {
     this.corsOptions = corsOptions;
 
     this.app = express();
-    this.v1_routes = new V1_ROutes();
+    this.v1_routes = new V1_Routes();
     this.use();
     this.connectDB();
     this.configuration();

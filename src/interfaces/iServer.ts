@@ -11,8 +11,4 @@ export interface IServerEnv {
     apiEndPoint: string;
     token: string;
   };
-  slack: {
-    token: string;
-    channelId: string;
-  };
 }
