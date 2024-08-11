@@ -1,4 +1,5 @@
 import { WebHookRepository } from "../repository";
+import { IItem } from "../../../interfaces";
 export class WebHookService {
   private webHookRepository: WebHookRepository;
 
@@ -6,7 +7,7 @@ export class WebHookService {
     this.webHookRepository = new WebHookRepository();
   }
 
-  public async updateColumnValue() {
-    return await this.webHookRepository.updateColumnValue();
+  public async UpdateResult(payload: IItem) {
+    return await this.webHookRepository.UpdateResult(payload);
   }
 }

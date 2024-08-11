@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { WebHookService } from "../service";
-import { IQueryConstructorPayload } from "../../../interfaces";
+import { IItem, IQueryConstructorPayload } from "../../../interfaces";
 import { GraphQlQueryConstructor } from "../../../utils";
 import { API, Log } from "../../../helper";
 export class WebHookController {
@@ -14,29 +14,40 @@ export class WebHookController {
     try {
       const { challenge, event } = req.body;
       if (challenge) {
-        // Respond with the challenge key to verify the webhook
         res.status(200).send({ challenge });
         return;
       }
-
-      // Process other data in the webhook payload
       if (event) {
         const { value, columnId, boardId, pulseId } = event;
         if (columnId === "numbers") {
-          const variables = {
+          const ItemId = parseInt(pulseId);
+          const BoardId = parseInt(boardId);
+          const Numbers = value.value;
+          const ItemName = "numbers_1";
+          const Result = value.value * 5;
+
+          const payload: IItem = {
+            ItemId,
+            BoardId,
+            ItemName,
+            Numbers,
+            Result,
+          };
+
+          await this.webHookService.UpdateResult(payload);
+          const variables: IQueryConstructorPayload = {
             queryType: "CHANGE_COLS_VALUE",
             payload: {
-              ITEM_ID: parseInt(pulseId),
-              BOARD_ID: parseInt(boardId),
-              COL_ID: "numbers_1",
-              COL_VALUE: value.value * 5,
+              ITEM_ID: ItemId,
+              BOARD_ID: BoardId,
+              COL_ID: ItemName,
+              COL_VALUE: Result,
             },
-          } as IQueryConstructorPayload;
+          };
           const query = GraphQlQueryConstructor(variables);
           await API.post("", {
             query,
           });
-          // todo update schema
         }
       }
       res.apiSuccess({
