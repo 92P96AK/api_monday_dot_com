@@ -64,5 +64,7 @@ This is post method and require body params as
 }
 ``
 
+If you run this code on local server , make sure to use some reverse proxy service like ngrok. it will create publicly available url so that monday.com can send event. 
+
 This is all, when you make change in specific column from monday board, it will multiply the value by 5 and call monday.com api to cast into result column.
 
