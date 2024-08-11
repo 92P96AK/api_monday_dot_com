@@ -1,7 +1,7 @@
 import { WebClient } from "@slack/web-api";
-import { config } from "../infrastructure";
-import { ERROR_NOTIFYING_SLACK } from "../constants";
-import { Log } from "../helper";
+import { config } from "@infrastructure";
+import { ERROR_NOTIFYING_SLACK } from "@constants";
+import { Log } from "@helper";
 
 const { token, channelId } = config.slack;
 const slackOptions = {};

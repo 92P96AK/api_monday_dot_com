@@ -1,4 +1,4 @@
-import { GRAPHQL_QUERIES } from "../constants";
+import { GRAPHQL_QUERIES } from "@constants";
 
 export interface IQueryConstructorPayload {
   queryType: keyof typeof GRAPHQL_QUERIES;

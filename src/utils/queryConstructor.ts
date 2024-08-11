@@ -1,5 +1,5 @@
-import { GRAPHQL_QUERIES } from "../constants";
-import { IQueryConstructorPayload } from "../interfaces";
+import { GRAPHQL_QUERIES } from "@constants";
+import { IQueryConstructorPayload } from "@interfaces";
 
 export const GraphQlQueryConstructor = (
   data: IQueryConstructorPayload

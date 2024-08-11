@@ -1,4 +1,4 @@
-import { IServerEnv } from "../interfaces";
+import { IServerEnv } from "@interfaces";
 
 require("dotenv").config();
 

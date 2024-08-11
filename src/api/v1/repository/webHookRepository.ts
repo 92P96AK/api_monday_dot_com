@@ -1,4 +1,4 @@
-import { IItem } from "../../../interfaces";
+import { IItem } from "@interfaces";
 import { ItemModel } from "../models";
 
 export class WebHookRepository {

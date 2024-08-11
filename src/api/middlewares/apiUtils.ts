@@ -1,4 +1,4 @@
-import { IRequestQuery } from "../../interfaces";
+import { IRequestQuery } from "@interfaces";
 import { NextFunction, Request, Response } from "express";
 
 export const RequestQueryTransformer = (

@@ -1,5 +1,5 @@
 import { WebHookRepository } from "../repository";
-import { IItem } from "../../../interfaces";
+import { IItem } from "@interfaces";
 export class WebHookService {
   private webHookRepository: WebHookRepository;
 

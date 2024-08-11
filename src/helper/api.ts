@@ -1,5 +1,5 @@
 import axios from "axios";
-import { config } from "../infrastructure";
+import { config } from "@infrastructure";
 
 const API = axios.create({
   baseURL: config.monday.apiEndPoint,

@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { WebHookController } from "../controller";
-import { Validate } from "../../../utils";
+import { Validate } from "@utils";
 import { webHookBody } from "../validation";
 
 export class WebHookRoutes {

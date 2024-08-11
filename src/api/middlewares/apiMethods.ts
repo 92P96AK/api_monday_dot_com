@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
-import { FAILED, SUCCESS } from "../../constants";
-import { IApiFail, IApiSuccess } from "../../interfaces";
+import { FAILED, SUCCESS } from "@constants";
+import { IApiFail, IApiSuccess } from "@interfaces";
 
 export const ApiMethods = (
   _: Request,

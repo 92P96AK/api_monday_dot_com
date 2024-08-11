@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express";
-import { VALIDATION_FAILED } from "../constants";
+import { VALIDATION_FAILED } from "@constants";
 import { AnySchema } from "yup";
 
 export const Validate =

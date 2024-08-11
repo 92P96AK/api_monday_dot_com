@@ -7,11 +7,11 @@ import * as fs from "fs";
 import * as path from "path";
 import mongoose, { ConnectOptions } from "mongoose";
 import { ApiMethods, RequestQueryTransformer } from "./middlewares";
-import { config } from "../infrastructure";
-import { IServerEnv } from "../interfaces";
-import { corsOptions, RESOURCE_NOT_FOUND, ROUTE_NOT_FOUND } from "../constants";
+import { config } from "@infrastructure";
+import { IServerEnv } from "@interfaces";
+import { corsOptions, RESOURCE_NOT_FOUND, ROUTE_NOT_FOUND } from "@constants";
 import { Routes as V1_ROutes } from "./v1/routes";
-import { Log } from "../helper";
+import { Log } from "@helper";
 
 export class Server {
   private app: Application;

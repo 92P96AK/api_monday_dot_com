@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 import { WebHookService } from "../service";
-import { IItem, IQueryConstructorPayload } from "../../../interfaces";
-import { GraphQlQueryConstructor } from "../../../utils";
-import { API, Log } from "../../../helper";
+import { IItem, IQueryConstructorPayload } from "@interfaces";
+import { GraphQlQueryConstructor } from "@utils";
+import { API, Log } from "@helper";
 export class WebHookController {
   private webHookService: WebHookService;
 

@@ -3,7 +3,7 @@ import {
     IApiSuccess,
     IApiFail,
     IStatus,
-  } from "../../interfaces";
+  } from "@interfaces";
   
   declare global {
     namespace Express {

@@ -7,5 +7,6 @@
   "events": {
     "start": "echo 'Server started'",
     "crash": "echo 'server crashed'"
-  }
+  },
+  "exec": "ts-node -r tsconfig-paths/register src/index.ts"
 }
