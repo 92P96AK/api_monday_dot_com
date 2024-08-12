@@ -2,7 +2,7 @@ import { GRAPHQL_QUERIES } from "@constants";
 import { IQueryConstructorPayload } from "@interfaces";
 
 export const GraphQlQueryConstructor = (
-  data: IQueryConstructorPayload
+  data: IQueryConstructorPayload,
 ): string => {
   const { payload, queryType } = data;
   let rawQuery = GRAPHQL_QUERIES[queryType];

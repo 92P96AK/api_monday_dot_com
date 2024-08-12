@@ -12,7 +12,7 @@ export class WebHookRepository {
         {
           upsert: true,
           new: true,
-        }
+        },
       );
     } catch (error) {
       throw error;

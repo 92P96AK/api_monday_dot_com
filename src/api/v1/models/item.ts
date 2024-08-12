@@ -14,7 +14,7 @@ const IteamSchema = new Schema<IItem>(
     timestamps: { createdAt: "created_at", updatedAt: "updated_at" },
     toObject: { virtuals: true },
     toJSON: { virtuals: true },
-  }
+  },
 );
 
 export const ItemModel = model("Items", IteamSchema);

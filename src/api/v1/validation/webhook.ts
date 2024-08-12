@@ -17,6 +17,6 @@ export const webHookBody = yup.object({
         pulseId: yup.number().required(),
       })
       .optional()
-      .default(undefined)
+      .default(undefined),
   }),
 });

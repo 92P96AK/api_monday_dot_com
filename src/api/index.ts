@@ -18,7 +18,7 @@ export class Server {
   private v1_routes: V1_Routes;
   private env: Partial<IServerEnv>;
   private swaggerFile: string = path.resolve(
-    __dirname + "/../swagger/swagger.json"
+    __dirname + "/../swagger/swagger.json",
   );
   private swaggerData: string = fs.readFileSync(this.swaggerFile, "utf8");
   private swaggerDocument: swaggerUi.JsonObject = JSON.parse(this.swaggerData);
@@ -44,7 +44,7 @@ export class Server {
       bodyParser.urlencoded({
         limit: "150mb",
         extended: true,
-      })
+      }),
     );
     this.app.use(RequestQueryTransformer, ApiMethods);
     this.app.use(RequestQueryTransformer);
@@ -54,7 +54,7 @@ export class Server {
     this.app.use(
       "/swagger",
       swaggerUi.serve,
-      swaggerUi.setup(this.swaggerDocument)
+      swaggerUi.setup(this.swaggerDocument),
     );
     this.app.use("/api/v1/", this.v1_routes.router);
     this.app.use((_, __, next: NextFunction) => {
@@ -100,7 +100,7 @@ export class Server {
     this.app.listen(this.app.get("port"), () => {
       Log.info({
         message: `.............. server is running at port ${this.app.get(
-          "port"
+          "port",
         )}  .........`,
       });
     });

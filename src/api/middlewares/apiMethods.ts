@@ -5,7 +5,7 @@ import { IApiFail, IApiSuccess } from "@interfaces";
 export const ApiMethods = (
   _: Request,
   response: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
   response.apiSuccess = ({
     message = SUCCESS,

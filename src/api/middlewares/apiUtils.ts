@@ -4,7 +4,7 @@ import { NextFunction, Request, Response } from "express";
 export const RequestQueryTransformer = (
   req: Request,
   _: Response,
-  next: NextFunction
+  next: NextFunction,
 ) => {
   const pageSize = parseInt(req.query["pageSize"] as string, 12);
   const page = parseInt(req.query["page"] as string, 12);

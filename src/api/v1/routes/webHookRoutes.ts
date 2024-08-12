@@ -17,7 +17,7 @@ export class WebHookRoutes {
     this.webHookRoute.post(
       "/update_column_value",
       Validate(webHookBody),
-      this.webHookController.updateColumnValue.bind(this.webHookController)
+      this.webHookController.updateColumnValue.bind(this.webHookController),
     );
   }
 }
