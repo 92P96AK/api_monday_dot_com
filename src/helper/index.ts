@@ -1,2 +1,2 @@
 export { Log } from "./logger";
-export { API } from "./api";
+export { MondaySdk } from "./mondaySdk";

@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { WebHookService } from "../service";
 import { IItem, IQueryConstructorPayload } from "@interfaces";
 import { GraphQlQueryConstructor } from "@utils";
-import { API, Log } from "@helper";
+import { MondaySdk, Log } from "@helper";
 export class WebHookController {
   private webHookService: WebHookService;
 
@@ -45,9 +45,7 @@ export class WebHookController {
             },
           };
           const query = GraphQlQueryConstructor(variables);
-          await API.post("", {
-            query,
-          });
+          await MondaySdk.api(query);
         }
       }
       res.apiSuccess({
