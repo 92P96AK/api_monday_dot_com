@@ -19,5 +19,10 @@ export class WebHookRoutes {
       Validate(webHookBody),
       this.webHookController.updateColumnValue.bind(this.webHookController),
     );
+    this.webHookRoute.get(
+      "/get_all_items",
+      Validate(webHookBody),
+      this.webHookController.getAllItems.bind(this.webHookController),
+    );
   }
 }

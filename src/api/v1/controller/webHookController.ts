@@ -3,6 +3,7 @@ import { WebHookService } from "../service";
 import { IItem, IQueryConstructorPayload } from "@interfaces";
 import { GraphQlQueryConstructor } from "@utils";
 import { MondaySdk, Log } from "@helper";
+import { ItemModel } from "../models";
 export class WebHookController {
   private webHookService: WebHookService;
 
@@ -50,6 +51,22 @@ export class WebHookController {
       }
       res.apiSuccess({
         message: "Success",
+      });
+    } catch (error) {
+      Log.error({ message: "error", error });
+      res.apiFail({
+        message: "Failed",
+        error,
+      });
+    }
+  }
+
+  async getAllItems(req: Request, res: Response) {
+    try {
+      const data = await ItemModel.find();
+      res.apiSuccess({
+        message: "Success",
+        data,
       });
     } catch (error) {
       Log.error({ message: "error", error });
