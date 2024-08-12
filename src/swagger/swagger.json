@@ -20,7 +20,7 @@
         }
       }
     },
-    "/api/v1/webhook/get_all_items":{
+    "/api/v1/webhook/get_all_items": {
       "get": {
         "tags": ["Get All Items"],
         "summary": "Get all locally stored Items",
