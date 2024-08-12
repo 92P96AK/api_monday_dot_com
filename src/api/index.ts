@@ -93,6 +93,9 @@ export class Server {
   private configuration() {
     this.app.set("port", this.env.port);
   }
+  public getApp() {
+    return this.app;
+  }
   public run() {
     this.app.listen(this.app.get("port"), () => {
       Log.info({
