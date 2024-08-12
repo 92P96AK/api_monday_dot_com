@@ -18,8 +18,5 @@ export const config: IServerEnv = {
   databaseName: LoadFromEnv("DATABASE_NAME"),
   databaseHost: LoadFromEnv("DATABASE_HOST"),
   databasePort: parseInt(LoadFromEnv("DATABASE_PORT") || "27017"),
-  monday: {
-    apiEndPoint: LoadFromEnv("MONDAY_API_END_POINT"),
-    token: LoadFromEnv("MONDAY_TOKEN"),
-  }
+  mondayToken: LoadFromEnv("MONDAY_TOKEN"),
 };

@@ -7,8 +7,5 @@ export interface IServerEnv {
   databaseHost: string;
   databasePort: number;
   databaseUrl: string;
-  monday: {
-    apiEndPoint: string;
-    token: string;
-  };
+  mondayToken: string;
 }
